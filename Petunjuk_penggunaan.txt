@@ -1,0 +1,63 @@
+PETUNJUK PENGGUNAAN WEBSITE
+Kopi Kintamani - UAS Cloud Computing Kelas C
+================================================
+
+1. TENTANG WEBSITE
+-------------------
+Website ini adalah profil usaha untuk UMKM fiktif "Kopi Kintamani",
+sebuah usaha kopi arabika dari dataran tinggi Kintamani, Bali.
+Website terdiri dari 4 halaman:
+  - index.html    -> Beranda
+  - profil.html   -> Profil Usaha
+  - produk.html   -> Informasi Utama (Katalog Produk)
+  - kontak.html   -> Kontak
+
+2. STRUKTUR FOLDER
+-------------------
+  index.html
+  profil.html
+  produk.html
+  kontak.html
+  css/style.css   -> seluruh tampilan/desain
+  js/script.js    -> interaksi (menu mobile, filter produk, form kontak)
+
+3. CARA MENJALANKAN SECARA LOKAL
+---------------------------------
+  a. Ekstrak/salin seluruh folder ini ke komputer.
+  b. Buka file index.html langsung dengan browser (double click), ATAU
+  c. Jalankan local server (opsional, disarankan agar semua fitur
+     berjalan normal), contoh dengan Python:
+       python -m http.server 8000
+     lalu buka http://localhost:8000 di browser.
+
+4. CARA MENGGUNAKAN WEBSITE
+----------------------------
+  - Gunakan menu navigasi di bagian atas untuk berpindah antar halaman
+    (Beranda, Profil, Produk, Kontak).
+  - Di halaman Produk, klik tombol filter (Semua / Natural / Washed-Honey /
+    Green Bean) untuk menyaring katalog produk sesuai kategori.
+  - Di halaman Kontak, isi form "Kirim Pesan" lalu klik "Kirim Pesan" -
+    akan muncul pesan konfirmasi (form ini simulasi, belum terhubung ke
+    server/database sungguhan).
+  - Tombol WA/Instagram di footer dan halaman Kontak mengarah ke tautan
+    contoh, silakan sesuaikan dengan akun asli bila digunakan sungguhan.
+  - Tampilan sudah responsif, dapat dicoba dibuka lewat HP (menu akan
+    berubah menjadi tombol hamburger "☰").
+
+5. CARA DEPLOY ULANG / MELAKUKAN PEMBARUAN (untuk keperluan UAS)
+-------------------------------------------------------------------
+  a. Edit file HTML/CSS yang diinginkan.
+  b. Jalankan:
+       git add .
+       git commit -m "update: <deskripsi perubahan>"
+       git push
+  c. GitHub Pages otomatis membangun ulang situs dalam 1-2 menit.
+  d. Refresh URL publik untuk melihat perubahan (gunakan Ctrl+F5 / hard
+     refresh jika browser masih menampilkan cache versi lama).
+
+6. CATATAN
+----------
+  - Seluruh data usaha (alamat, harga, kontak) pada website ini bersifat
+    CONTOH untuk keperluan tugas UAS, bukan data usaha sungguhan.
+  - Website tidak menggunakan domain berbayar maupun layanan cloud
+    berbayar - sepenuhnya di-hosting gratis melalui GitHub Pages.

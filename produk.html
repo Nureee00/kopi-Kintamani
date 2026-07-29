@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Katalog Produk — Kopi Kintamani</title>
+<meta name="description" content="Katalog kopi arabika Kintamani: green bean, roasted bean, dan bubuk kopi dengan berbagai metode proses.">
+<link rel="stylesheet" href="css/style.css">
+<style>
+  .filter-row{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:38px;}
+  .filter-btn{
+    font-family:var(--mono);font-size:12px;padding:9px 16px;border-radius:999px;
+    border:1px solid var(--garis);background:transparent;color:var(--krem-redup);cursor:pointer;
+  }
+  .filter-btn.aktif, .filter-btn:hover{border-color:var(--emas);color:var(--emas-muda);}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner wrap" style="padding-left:0;padding-right:0;">
+    <a href="index.html" class="brand">
+      <span class="mark">KK</span>
+      Kopi Kintamani
+    </a>
+    <nav class="links">
+      <a href="index.html">Beranda</a>
+      <a href="profil.html">Profil</a>
+      <a href="produk.html" class="aktif">Produk</a>
+      <a href="kontak.html">Kontak</a>
+    </nav>
+    <button class="menu-toggle" aria-label="Buka menu">☰</button>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero wrap">
+    <span class="eyebrow">Informasi Utama</span>
+    <h1>Katalog Kopi Kintamani</h1>
+    <p class="lede">Semua kopi disangrai sesuai pesanan setiap Selasa &amp; Jumat. Tersedia dalam bentuk biji utuh (roasted bean) maupun bubuk (ground) sesuai kebutuhan.</p>
+  </section>
+
+  <section class="wrap" style="padding-top:0;">
+    <div class="filter-row">
+      <button class="filter-btn aktif" data-kategori="semua">Semua</button>
+      <button class="filter-btn" data-kategori="natural">Natural</button>
+      <button class="filter-btn" data-kategori="washed">Washed / Honey</button>
+      <button class="filter-btn" data-kategori="greenbean">Green Bean</button>
+    </div>
+
+    <div class="produk-grid">
+
+      <div class="lot-card produk-card" data-kategori="washed">
+        <span class="kode">KTM-ARB-01</span>
+        <h3>Kintamani Honey Process</h3>
+        <div class="lot-grid">
+          <div>Ketinggian<b>1.400 mdpl</b></div>
+          <div>Roast<b>Medium</b></div>
+        </div>
+        <p style="color:var(--krem-redup);font-size:.9rem;margin-top:10px;">Manis madu, body medium, cocok untuk V60 maupun espresso.</p>
+        <div class="harga"><span style="font-size:.85rem;color:var(--krem-redup);">200 gram</span><b>Rp 68.000</b></div>
+      </div>
+
+      <div class="lot-card produk-card" data-kategori="natural">
+        <span class="kode">KTM-ARB-02</span>
+        <h3>Kintamani Natural</h3>
+        <div class="lot-grid">
+          <div>Ketinggian<b>1.350 mdpl</b></div>
+          <div>Roast<b>Medium-Light</b></div>
+        </div>
+        <p style="color:var(--krem-redup);font-size:.9rem;margin-top:10px;">Aroma buah beri, tingkat asam ceria, favorit pelanggan kafe.</p>
+        <div class="harga"><span style="font-size:.85rem;color:var(--krem-redup);">200 gram</span><b>Rp 72.000</b></div>
+      </div>
+
+      <div class="lot-card produk-card" data-kategori="washed">
+        <span class="kode">KTM-ARB-03</span>
+        <h3>Kintamani Peaberry</h3>
+        <div class="lot-grid">
+          <div>Ketinggian<b>1.500 mdpl</b></div>
+          <div>Roast<b>Medium</b></div>
+        </div>
+        <p style="color:var(--krem-redup);font-size:.9rem;margin-top:10px;">Biji bundar langka, rasa bersih, cocok untuk pour over.</p>
+        <div class="harga"><span style="font-size:.85rem;color:var(--krem-redup);">200 gram</span><b>Rp 85.000</b></div>
+      </div>
+
+      <div class="lot-card produk-card" data-kategori="natural">
+        <span class="kode">KTM-ARB-04</span>
+        <h3>Kintamani Dark Roast</h3>
+        <div class="lot-grid">
+          <div>Ketinggian<b>1.300 mdpl</b></div>
+          <div>Roast<b>Dark</b></div>
+        </div>
+        <p style="color:var(--krem-redup);font-size:.9rem;margin-top:10px;">Body tebal, pahit seimbang, cocok untuk kopi tubruk &amp; susu.</p>
+        <div class="harga"><span style="font-size:.85rem;color:var(--krem-redup);">200 gram</span><b>Rp 65.000</b></div>
+      </div>
+
+      <div class="lot-card produk-card" data-kategori="greenbean">
+        <span class="kode">KTM-GB-01</span>
+        <h3>Green Bean Grade 1</h3>
+        <div class="lot-grid">
+          <div>Ketinggian<b>1.400 mdpl</b></div>
+          <div>Kondisi<b>Belum disangrai</b></div>
+        </div>
+        <p style="color:var(--krem-redup);font-size:.9rem;margin-top:10px;">Untuk pelanggan yang ingin menyangrai sendiri. Minimal pembelian 1 kg.</p>
+        <div class="harga"><span style="font-size:.85rem;color:var(--krem-redup);">1 kg</span><b>Rp 120.000</b></div>
+      </div>
+
+      <div class="lot-card produk-card" data-kategori="washed">
+        <span class="kode">KTM-ARB-05</span>
+        <h3>Kintamani Bubuk Tubruk</h3>
+        <div class="lot-grid">
+          <div>Ketinggian<b>1.350 mdpl</b></div>
+          <div>Bentuk<b>Bubuk halus</b></div>
+        </div>
+        <p style="color:var(--krem-redup);font-size:.9rem;margin-top:10px;">Digiling halus, praktis diseduh langsung dengan air panas.</p>
+        <div class="harga"><span style="font-size:.85rem;color:var(--krem-redup);">200 gram</span><b>Rp 55.000</b></div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="alt">
+    <div class="wrap" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px;">
+      <div>
+        <span class="eyebrow">Ingin jumlah besar?</span>
+        <h2 style="margin-top:8px;">Tersedia harga khusus untuk kafe &amp; reseller.</h2>
+      </div>
+      <a href="kontak.html" class="btn btn-emas">Hubungi Kami</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap footer-inner">
+    <p>© <span id="tahun-footer">2026</span> Kopi Kintamani. UMKM kopi arabika, Kabupaten Bangli, Bali.</p>
+    <div class="sosial">
+      <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram">IG</a>
+      <a href="https://wa.me/6281234567890" target="_blank" rel="noopener" aria-label="WhatsApp">WA</a>
+    </div>
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>

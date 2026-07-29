@@ -1,0 +1,255 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500&family=Work+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+:root{
+  /* --- Palet: dataran tinggi Kintamani, kebun kopi & danau --- */
+  --hutan:      #1F3327;   /* hijau hutan tua - background utama */
+  --hutan-2:    #294232;   /* satu step lebih terang, untuk kartu */
+  --sangrai:    #3B2418;   /* coklat biji sangrai - aksen gelap */
+  --emas:       #C89B3C;   /* emas kunyit - aksen utama / CTA */
+  --emas-muda:  #E3C878;   /* emas terang - hover / highlight */
+  --krem:       #F6F1E7;   /* krem kertas label - teks di atas gelap */
+  --krem-redup: #D8CDB4;   /* krem redup - teks sekunder */
+  --garis:      rgba(246,241,231,0.14);
+
+  --display: 'Fraunces', serif;
+  --body: 'Work Sans', sans-serif;
+  --mono: 'IBM Plex Mono', monospace;
+
+  --maks-lebar: 1120px;
+  --radius: 4px;
+}
+
+*{box-sizing:border-box;margin:0;padding:0;}
+
+html{scroll-behavior:smooth;}
+
+body{
+  background:var(--hutan);
+  color:var(--krem);
+  font-family:var(--body);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+
+a{color:inherit;text-decoration:none;}
+
+img{max-width:100%;display:block;}
+
+.wrap{max-width:var(--maks-lebar);margin:0 auto;padding:0 28px;}
+
+/* ---------- Utility: label bergaya "lot kopi" ---------- */
+.eyebrow{
+  font-family:var(--mono);
+  font-size:12px;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--emas-muda);
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+}
+.eyebrow::before{
+  content:"";
+  width:6px;height:6px;
+  background:var(--emas);
+  border-radius:50%;
+  display:inline-block;
+}
+
+h1,h2,h3{
+  font-family:var(--display);
+  font-weight:600;
+  line-height:1.1;
+  color:var(--krem);
+}
+h1{font-size:clamp(2.4rem,5vw,3.8rem);font-weight:700;}
+h2{font-size:clamp(1.8rem,3.4vw,2.6rem);}
+h3{font-size:1.3rem;}
+
+p.lede{font-size:1.15rem;color:var(--krem-redup);max-width:56ch;}
+
+/* ---------- Navigasi ---------- */
+header.nav{
+  position:sticky;top:0;z-index:50;
+  background:rgba(31,51,39,.92);
+  backdrop-filter:blur(6px);
+  border-bottom:1px solid var(--garis);
+}
+.nav-inner{
+  max-width:var(--maks-lebar);margin:0 auto;padding:16px 28px;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.brand{display:flex;align-items:center;gap:10px;font-family:var(--display);font-weight:700;font-size:1.15rem;}
+.brand .mark{
+  width:34px;height:34px;border-radius:50%;
+  background:conic-gradient(from 210deg, var(--emas), var(--sangrai), var(--emas));
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--mono);font-size:11px;color:var(--hutan);font-weight:700;
+}
+nav.links{display:flex;gap:28px;font-size:.95rem;}
+nav.links a{
+  position:relative;padding:4px 0;color:var(--krem-redup);
+  transition:color .2s;
+}
+nav.links a:hover, nav.links a.aktif{color:var(--emas-muda);}
+nav.links a.aktif::after{
+  content:"";position:absolute;left:0;right:0;bottom:-3px;height:2px;background:var(--emas);
+}
+.menu-toggle{display:none;background:none;border:1px solid var(--garis);color:var(--krem);
+  width:38px;height:38px;border-radius:var(--radius);font-size:1.1rem;cursor:pointer;}
+
+/* ---------- Hero ---------- */
+.hero{
+  padding:96px 0 72px;
+  display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center;
+}
+.hero .lede{margin-top:18px;}
+.hero-cta{display:flex;gap:14px;margin-top:34px;flex-wrap:wrap;}
+
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:13px 24px;border-radius:var(--radius);
+  font-weight:600;font-size:.95rem;
+  border:1px solid transparent;cursor:pointer;transition:transform .15s, background .2s, color .2s;
+}
+.btn:hover{transform:translateY(-1px);}
+.btn-emas{background:var(--emas);color:var(--sangrai);}
+.btn-emas:hover{background:var(--emas-muda);}
+.btn-garis{border-color:var(--garis);color:var(--krem);}
+.btn-garis:hover{border-color:var(--emas-muda);color:var(--emas-muda);}
+
+/* Kartu "lot kopi" - elemen signature, dipakai di hero & produk */
+.lot-card{
+  background:var(--hutan-2);
+  border:1px solid var(--garis);
+  border-radius:6px;
+  padding:26px;
+  position:relative;
+  overflow:hidden;
+}
+.lot-card::before{
+  content:"";position:absolute;top:0;left:0;right:0;height:5px;
+  background:repeating-linear-gradient(90deg,var(--emas) 0 10px, transparent 10px 18px);
+}
+.lot-card .kode{
+  font-family:var(--mono);font-size:12px;color:var(--emas-muda);
+  letter-spacing:.08em;
+}
+.lot-card h3{margin-top:10px;}
+.lot-grid{
+  margin-top:18px;display:grid;grid-template-columns:1fr 1fr;gap:14px 20px;
+  font-family:var(--mono);font-size:12.5px;color:var(--krem-redup);
+}
+.lot-grid b{display:block;color:var(--krem);font-size:14px;font-weight:500;margin-top:2px;}
+
+/* ---------- Section umum ---------- */
+section{padding:76px 0;}
+section.alt{background:var(--hutan-2);border-top:1px solid var(--garis);border-bottom:1px solid var(--garis);}
+.section-head{max-width:640px;margin-bottom:44px;}
+.section-head h2{margin-top:10px;}
+
+/* Grid keunggulan */
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;}
+.fitur{
+  border:1px solid var(--garis);border-radius:6px;padding:26px;
+  background:rgba(246,241,231,.03);
+}
+.fitur .no{font-family:var(--mono);color:var(--emas);font-size:13px;}
+.fitur h3{margin:12px 0 8px;font-size:1.15rem;}
+.fitur p{color:var(--krem-redup);font-size:.95rem;}
+
+/* Produk */
+.produk-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:8px;}
+.produk-card .harga{
+  margin-top:16px;padding-top:14px;border-top:1px dashed var(--garis);
+  display:flex;justify-content:space-between;align-items:baseline;
+}
+.produk-card .harga b{font-family:var(--display);font-size:1.25rem;color:var(--emas-muda);}
+
+/* Timeline proses (profil) */
+.proses{border-left:1px solid var(--garis);padding-left:28px;margin-top:10px;}
+.langkah{position:relative;padding-bottom:38px;}
+.langkah:last-child{padding-bottom:0;}
+.langkah::before{
+  content:attr(data-no);
+  position:absolute;left:-40px;top:0;
+  width:26px;height:26px;border-radius:50%;
+  background:var(--hutan);border:1px solid var(--emas);
+  color:var(--emas-muda);font-family:var(--mono);font-size:11px;
+  display:flex;align-items:center;justify-content:center;
+}
+.langkah h3{margin-bottom:6px;}
+.langkah p{color:var(--krem-redup);font-size:.95rem;max-width:56ch;}
+
+/* Kontak */
+.kontak-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;}
+.kontak-item{display:flex;gap:14px;margin-bottom:22px;}
+.kontak-item .ikon{
+  width:40px;height:40px;flex:none;border-radius:50%;
+  background:var(--hutan);border:1px solid var(--garis);
+  display:flex;align-items:center;justify-content:center;color:var(--emas-muda);
+}
+.kontak-item h3{font-size:1rem;margin-bottom:2px;}
+.kontak-item p, .kontak-item a{color:var(--krem-redup);font-size:.92rem;}
+.kontak-item a:hover{color:var(--emas-muda);}
+
+form.form-kontak{display:grid;gap:16px;}
+form.form-kontak label{font-size:.85rem;color:var(--krem-redup);margin-bottom:6px;display:block;}
+form.form-kontak input, form.form-kontak textarea{
+  width:100%;background:var(--hutan-2);border:1px solid var(--garis);
+  border-radius:var(--radius);padding:12px 14px;color:var(--krem);font-family:var(--body);font-size:.95rem;
+}
+form.form-kontak input:focus, form.form-kontak textarea:focus{
+  outline:2px solid var(--emas);outline-offset:1px;
+}
+.form-status{font-size:.9rem;color:var(--emas-muda);min-height:1.2em;}
+
+.peta-frame{border:1px solid var(--garis);border-radius:6px;overflow:hidden;min-height:280px;}
+.peta-frame iframe{width:100%;height:100%;min-height:280px;border:0;filter:grayscale(.2) contrast(1.05);}
+
+/* Footer */
+footer{border-top:1px solid var(--garis);padding:44px 0;background:var(--sangrai);}
+.footer-inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:18px;}
+footer p{color:var(--krem-redup);font-size:.85rem;}
+.sosial{display:flex;gap:16px;}
+.sosial a{
+  width:36px;height:36px;border:1px solid var(--garis);border-radius:50%;
+  display:flex;align-items:center;justify-content:center;font-size:.8rem;font-family:var(--mono);
+  color:var(--krem-redup);
+}
+.sosial a:hover{border-color:var(--emas);color:var(--emas-muda);}
+
+/* Halaman-header sederhana (non-beranda) */
+.page-hero{padding:64px 0 48px;}
+.page-hero .eyebrow{margin-bottom:14px;}
+
+/* Update badge - dipakai untuk menunjukkan pembaruan konten */
+.badge-update{
+  display:inline-block;margin-top:18px;padding:6px 14px;
+  border:1px solid var(--emas);border-radius:999px;
+  font-family:var(--mono);font-size:11.5px;color:var(--emas-muda);
+}
+
+/* ---------- Responsif ---------- */
+@media (max-width: 860px){
+  .hero{grid-template-columns:1fr;padding-top:56px;}
+  .grid-3{grid-template-columns:1fr;}
+  .produk-grid{grid-template-columns:1fr 1fr;}
+  .kontak-grid{grid-template-columns:1fr;}
+  nav.links{
+    position:absolute;top:100%;left:0;right:0;
+    background:var(--hutan);border-bottom:1px solid var(--garis);
+    flex-direction:column;padding:18px 28px;gap:16px;
+    display:none;
+  }
+  nav.links.buka{display:flex;}
+  .menu-toggle{display:block;}
+}
+@media (max-width: 560px){
+  .produk-grid{grid-template-columns:1fr;}
+}
+
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto;}
+  *{transition:none !important;}
+}
