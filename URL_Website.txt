@@ -1,5 +1,5 @@
-URL Website (isi setelah proses deploy ke GitHub Pages):
-https://<username-github>.github.io/kopi-kintamani/
+URL Website:
+https://nureee00.github.io/kopi-Kintamani/ 
 
 URL Repository GitHub:
-https://github.com/<username-github>/kopi-kintamani
+https://github.com/Nureee00/kopi-Kintamani 
